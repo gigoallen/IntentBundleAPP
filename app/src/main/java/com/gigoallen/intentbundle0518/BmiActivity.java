@@ -30,12 +30,18 @@ public class BmiActivity extends AppCompatActivity {
 
            bmi = weight/(height*height);
 
-           String result = "正常";
+           String result = "過輕";
 
-           if(bmi<35 && bmi>30)
+           if(bmi<35 && bmi>=30)
                result = "中度肥胖";
-           else if(bmi<30 && bmi>27)
+           else if(bmi<30 && bmi>=27)
                result = "輕度肥胖";
+            else if(bmi<27 && bmi>=24)
+                result = "過重";
+           else if(bmi>=25)
+               result = "重度肥胖";
+           else if(bmi<24 && bmi>=18.5)
+               result = "正常";
 
             TextView txvBMI = findViewById(R.id.txvBMI);
 
